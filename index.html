@@ -17,7 +17,6 @@
 
         <script src="js/jquery-1.10.2.js"></script>
         <script src="js/jquery-ui-1.10.4.custom.min.js"></script>  
-        <!--<script src="js/lazy.js"></script>-->
         <script src="js/checkConn.js"></script>
 
 
@@ -33,7 +32,6 @@
 
         <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
         <script src="js/jquery.mobile-1.4.2.min.js"></script>
-        <!-- <script src="js/jquery.mobile.datepicker.js"></script>--><!-- El manejo del calendario le hace jquery-ui-.x.x.x.custom  -->
         <script src="js/maps.js"></script>
         <script src="js/calendario.js"></script>
         <script src="js/localStorage.min.js"></script>
@@ -617,19 +615,7 @@
                 } catch (e) {
 
                 }
-                /*try {
-                 tf = new TestFlight();
-                 tf.takeOff(win, fail, "037be06110ad9f23fe736f20b2018e6e_MzQ5MjU5MjAxNC0wMy0wNiAxMToyNzowMC43NTU3Nzg");
-                 tf.manuallyStartSession(successCallback, failureCallback);
-                 
-                 function win() {
-                 }
-                 function fail() {
-                 }
-                 } catch (e) {
-                 console.error("falla la carga de testFlight")
-                 }*/
-                //onDeviceReady()
+                
                 hideLoader();
             }
             $("#filtroCalendario").datepicker();
@@ -647,40 +633,22 @@
                     } catch(exce){}
                     document.addEventListener('backKeyDown', manejaBack, false);
                     function manejaBack() {
-                        //alert('manejaBack')
-                        //e.preventDefault()
                         if ($.mobile.activePage.is('#indice')) {
-                            //e.preventDefault();
                             navigator.app.exitApp();
                         }
                         else {
-                            //navigator.app.backHistory()
                             $(".ui-page-active a[data-rel='back']").click()
                         }
                     }
-                    /*document.addEventListener('backKeyDown', manejaBack, false);
-                    document.addEventListener('exit', manejaBack, false);*/
                 } catch (err) {
                 }
             })
 
-            /* if (navigator.geolocation) {
-             // Localizacion de la posicion del usuario.  Cache the location for 5 minutes, timeout after 6 seconds
-             try {
-             navigator.geolocation.getCurrentPosition(success, fail, {maximumAge: 500000, enableHighAccuracy: true, timeout: 6000});
-             } catch (ex) {
-             }
-             }*/
             var pushNotification;
             $("#selectorAntelacion").click(function () {
                 $("#selectorAntelacion").mobiscroll('setValue', '01:00');
             });
             function onDeviceReady() {
-                /*navigator.geolocation.getCurrentPosition(onSuccessGeo, onErrorGeo);    
-                 function onSuccessGeo(){}
-                 function onErrorGeo(){}*/
-
-
                 $("#selectorAntelacion").mobiscroll('setValue', '01:00');
                 var img = new Image();
                 img.src = "images/relojMarcado.png";
@@ -690,23 +658,6 @@
                 img.src = "images/estrellaMarcada.png";
 
                 $("#app-status-ul").append('<li>deviceready event received</li>');
-
-                /*document.addEventListener("backbutton", function (e)
-                {
-                    $("#app-status-ul").append('<li>backbutton event received</li>');
-
-                    if ($("#home").length > 0)
-                    {
-                        // call this to get a new token each time. don't call it to reuse existing token.
-                        //pushNotification.unregister(successHandler, errorHandler);
-                        e.preventDefault();
-                        navigator.app.exitApp();
-                    }
-                    else
-                    {
-                        navigator.app.backHistory();
-                    }
-                }, false);*/
 
                 try
                 {
@@ -723,7 +674,8 @@
                         link.media = 'all';
                         head.appendChild(link);
                         $("#app-status-ul").append('<li>registering android</li>');
-                        pushNotification.register(successHandler, errorHandler, {"senderID": "629144394569", "ecb": "onNotificationGCM"});		// required!
+                        //pushNotification.register(successHandler, errorHandler, {"senderID": "629144394569", "ecb": "onNotificationGCM"});		// required!
+                        pushNotification.register(successHandler, errorHandler, {"senderID": "269215128011", "ecb": "onNotificationGCM"});		// required!
                     } else {
                         $("#app-status-ul").append('<li>registering iOS</li>');
                         pushNotification.register(tokenHandler, errorHandler, {"badge": "true", "sound": "true", "alert": "true", "ecb": "onNotificationAPN"});	// required!

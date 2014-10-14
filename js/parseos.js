@@ -649,6 +649,7 @@ function parsearListadoActividades(data) {
         var nombre = act.nombre;
         var img = act.urlImagen;
         var fechaIni = act.fechaInicioOficial;
+        var horaIni = act.horaInicioOficial;
         var fechaFin = act.fechaFinOficial;
         var lugar = act.nombreLugar;
         var key = "actividad" + idAct;
@@ -669,7 +670,7 @@ function parsearListadoActividades(data) {
         if (act.nombreEventos)
             acumulador += "<div><span class='spanListaActi'>" + act.nombreEventos + "</span>";
         /*acumulador += "<span style='font-size: 12px;font-weight: normal;overflow-x: hidden;text-overflow: ellipsis;white-space: nowrap;width: 170px;'>" + lugar + "</span>";*/
-        acumulador += "<span class='spanListaActi'>" + getFechaSolo(fechaIni) + "</span></div>";
+        acumulador += "<span class='spanListaActi'>" + getFechaSolo(fechaIni) + " " + horaIni + "</span></div>";
         acumulador += "</div></a>";
         acumulador += "<table  class='tabla2ListadoActividades'><tr>"
 

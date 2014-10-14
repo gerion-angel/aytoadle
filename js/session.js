@@ -41,7 +41,8 @@ var sessionTematicasFavoritas = false;
 var sessionActividadesFavoritas = false;
 var sessionUUID;
 
-var sessionTrakingGoogle = "UA-24976927-9"
+var sessionTrakingGoogle = "UA-24976927-9"//padel y otras
+//var sessionTrakingGoogle = "UA-8393234-7"//Infantiles
 
 //para alarmas
 var sessionAlarmNombre;
