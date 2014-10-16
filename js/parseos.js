@@ -661,8 +661,6 @@ function parsearListadoActividades(data) {
         acumulador += "<div class='fichaActividad'>";
         acumulador += "<table class='tabla1ListadoActividades'><tr>"
         if (img != null && img != "") {
-//            acumulador += "<td><img class='lazy' data-original='" + img + "'\></td>";
-
             acumulador += "<td><div class='thumnailActividad' style='background-image:url(" + img + ")'></div></td>";
 
         }

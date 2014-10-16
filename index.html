@@ -310,12 +310,6 @@
                 </ul>
                 <div class="zonaBannerEvento ajusteListadoBanner" id="bannerDelListado"></div>
             </div>
-            <!-- Este footer fuera en la web -->
-            <!--<div data-role="footer"  data-position="fixed" id="footerActividades" class="noMostrar">
-                <img src="images/estrellaBlancaNoMarca.png" id="btnFavActividades" onclick="setLoader('idBody');
-                setTimeout(mostrarActividadesFavoritos, 1)">
-                
-            </div>-->
         </div>
 
         <!-- Detalle de actividad -->
@@ -375,15 +369,6 @@
                 </div>
                 <div class="zonaBannerEvento ajusteFooterBanner" id="bannerDeLaActividad"></div>
             </div>
-            <!--<div data-role="footer" class="nav-glyphish-example" data-theme="b" data-position="fixed">
-                <div data-role="navbar" class="nav-glyphish-example">
-                    <ul>
-                        <li><a href="#" onclick="muestraPopMas()" id="mas" data-icon="custom"></a></li>
-                        <li><a href="#" onclick="muestraPopPatrocinadores()" id="admir" data-icon="custom"></a></li>
-                        <li><a href="#" onclick="muestraPopShare()" id="share" data-icon="custom"></a></li>
-                    </ul>
-                </div>
-            </div>-->
         </div>
 
         <!-- Detalle del evento -->
@@ -558,11 +543,16 @@
 
         <!--<div class='popUpStore' style="display:none" >
             <div class="cajaStore fichaActividad">
+			<table style="text-align: -webkit-center;text-align: center;"><tr><td>
+			<br/>
                 <span>¿Quiere descargar la aplicación MundialPadel para su dispositivo?</span>
-                <div>
+                </td></tr><tr><td>
+				<br/>
+				<div>
                     <input type="button" value="Descargar" class="aceptar"/>
                     <input type="button" value="Cancelar" class="cancelar"/>
                 </div>
+				</td></tr></table>
             </div>
         </div>-->
 
@@ -859,7 +849,7 @@
                     $('.popUpStore').show();
                     bindEventosPopUp()
                 } else {
-                    $('.popUpStore').remove();
+                   // $('.popUpStore').remove();
                 }
             } catch (ex) {
             }
